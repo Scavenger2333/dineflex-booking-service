@@ -9,6 +9,7 @@ import RestaurantDetail from "./pages/RestaurantDetail";
 import BookingConfirmation from "./pages/BookingConfirmation";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -18,13 +19,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/restaurant/:id" element={<RestaurantDetail />} />
-          <Route path="/booking/:id" element={<BookingConfirmation />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Header />
+        <div className="pt-24">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/restaurant/:id" element={<RestaurantDetail />} />
+            <Route path="/booking/:id" element={<BookingConfirmation />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
