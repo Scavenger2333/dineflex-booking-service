@@ -1,4 +1,3 @@
-
 // Restaurant types
 export interface Restaurant {
   id: string;
@@ -28,12 +27,12 @@ export interface Offer {
 }
 
 // Availability types
-export interface AvailableSlot {
+export type AvailableSlot = {
   time: string;
-  type: 'earlyBird' | 'regular' | 'lastMinute';
+  type: "earlyBird" | "regular" | "lastMinute";
   offerId?: string;
   discount?: string;
-}
+};
 
 export interface RestaurantAvailability {
   restaurantId: string;
