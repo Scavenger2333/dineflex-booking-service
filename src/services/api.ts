@@ -1,4 +1,3 @@
-
 import { Restaurant, RestaurantDetail, AvailableSlot, BookingRequest, BookingResponse, RestaurantAvailability } from '../types/api';
 
 const mockRestaurants: Restaurant[] = [
@@ -79,7 +78,7 @@ const mockRestaurants: Restaurant[] = [
     name: 'Thai Orchid',
     cuisine: 'Thai',
     location: 'Athlone',
-    thumbnailUrl: 'https://images.unsplash.com/photo-1562565652-a0d8f0c59eb9?w=800&auto=format&fit=crop',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop',
     hasEarlyBird: true,
     hasLastMinute: false,
   },
