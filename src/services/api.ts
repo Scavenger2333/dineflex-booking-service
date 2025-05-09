@@ -1,3 +1,4 @@
+
 import { Restaurant, RestaurantDetail, AvailableSlot, BookingRequest, BookingResponse, RestaurantAvailability } from '../types/api';
 
 const mockRestaurants: Restaurant[] = [
@@ -96,7 +97,7 @@ const mockRestaurants: Restaurant[] = [
 const mockRestaurantDetails: Record<string, RestaurantDetail> = {
   '1': {
     ...mockRestaurants[0],
-    description: 'Dublin's premier steakhouse offering the finest cuts of locally sourced beef.',
+    description: "Dublin's premier steakhouse offering the finest cuts of locally sourced beef.",
     images: [
       'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1579366948929-3b23abc88a84?w=800&auto=format&fit=crop',
@@ -117,7 +118,7 @@ const mockRestaurantDetails: Record<string, RestaurantDetail> = {
   },
   '2': {
     ...mockRestaurants[1],
-    description: 'Authentic Italian cuisine in the heart of Cork, featuring homemade pasta and wood-fired pizza.',
+    description: "Authentic Italian cuisine in the heart of Cork, featuring homemade pasta and wood-fired pizza.",
     images: [
       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1595295333158-4742f28fbd85?w=800&auto=format&fit=crop',
@@ -131,7 +132,7 @@ const mockRestaurantDetails: Record<string, RestaurantDetail> = {
   },
   '3': {
     ...mockRestaurants[2],
-    description: 'Contemporary Japanese cuisine featuring the freshest seafood and skillful sushi preparation.',
+    description: "Contemporary Japanese cuisine featuring the freshest seafood and skillful sushi preparation.",
     images: [
       'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&auto=format&fit=crop',
