@@ -1,3 +1,4 @@
+
 // Restaurant types
 export interface Restaurant {
   id: string;

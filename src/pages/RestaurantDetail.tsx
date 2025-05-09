@@ -1,11 +1,9 @@
-
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { format } from 'date-fns';
 import { apiService } from '../services/api';
 import { AvailableSlot, BookingRequest } from '../types/api';
-import Header from '../components/Header';
 import AvailabilitySelector from '../components/AvailabilitySelector';
 import BookingForm from '../components/BookingForm';
 import { toast } from 'sonner';
