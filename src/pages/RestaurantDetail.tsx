@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation } from '@tanstack/react-query';
@@ -69,7 +70,6 @@ const RestaurantDetail = () => {
   if (isLoadingRestaurant) {
     return (
       <div className="min-h-screen bg-dineflex-offwhite">
-        <Header />
         <div className="container mx-auto px-4 py-10 max-w-7xl">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
@@ -85,7 +85,6 @@ const RestaurantDetail = () => {
   if (!restaurant) {
     return (
       <div className="min-h-screen bg-dineflex-offwhite">
-        <Header />
         <div className="container mx-auto px-4 py-10 max-w-7xl text-center">
           <h2 className="text-2xl font-semibold mb-4">Restaurant not found</h2>
           <Button onClick={() => navigate('/')}>
@@ -97,9 +96,7 @@ const RestaurantDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-dineflex-offwhite">
-      <Header />
-      
+    <div className="min-h-screen bg-dineflex-offwhite">      
       <div className="container mx-auto px-4 py-6 max-w-7xl">
         <Button 
           variant="ghost" 

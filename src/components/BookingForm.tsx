@@ -48,10 +48,13 @@ const BookingForm: React.FC<BookingFormProps> = ({
 
   const handleSubmit = (values: BookingFormValues) => {
     const bookingData: BookingRequest = {
-      ...values,
       restaurantId,
       date: date.toISOString().split('T')[0], // Format as YYYY-MM-DD
       time,
+      partySize: values.partySize,
+      customerName: values.customerName,
+      customerEmail: values.customerEmail,
+      customerPhone: values.customerPhone,
     };
     
     onSubmit(bookingData);
