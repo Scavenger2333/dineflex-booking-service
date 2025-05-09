@@ -7,9 +7,10 @@ import { apiService } from '../services/api';
 import { AvailableSlot, BookingRequest } from '../types/api';
 import AvailabilitySelector from '../components/AvailabilitySelector';
 import BookingForm from '../components/BookingForm';
+import RestaurantMap from '../components/RestaurantMap';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
 
 const RestaurantDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -125,31 +126,40 @@ const RestaurantDetail = () => {
           
           <p className="text-lg mb-4">{restaurant.description}</p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <h3 className="text-lg font-semibold mb-1">Location</h3>
-              <p>{restaurant.address}</p>
+              <h3 className="text-lg font-semibold mb-3">Location & Contact</h3>
+              <div className="flex items-start mb-2">
+                <MapPin className="h-5 w-5 text-dineflex-burgundy mr-2 mt-0.5" />
+                <p>{restaurant.address}</p>
+              </div>
+              <p className="mb-2"><span className="font-medium">Phone:</span> {restaurant.phone}</p>
+              <p><span className="font-medium">Hours:</span> {restaurant.openingHours}</p>
+              
+              <div className="mt-4">
+                <RestaurantMap address={restaurant.address} name={restaurant.name} />
+              </div>
             </div>
+            
             <div>
-              <h3 className="text-lg font-semibold mb-1">Opening Hours</h3>
-              <p>{restaurant.openingHours}</p>
+              {restaurant.earlyBirdOffers && restaurant.earlyBirdOffers.length > 0 && (
+                <div className="mb-6 p-4 bg-white rounded-lg shadow-sm border-l-4 border-dineflex-burgundy">
+                  <h3 className="text-xl font-semibold mb-2 text-dineflex-burgundy">
+                    Early Bird Special
+                  </h3>
+                  {restaurant.earlyBirdOffers.map(offer => (
+                    <div key={offer.id}>
+                      <p className="font-medium">{offer.title}</p>
+                      <p>{offer.description}</p>
+                      <p className="text-sm text-gray-600">Available: {offer.availableTimes}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* Additional restaurant details could go here */}
             </div>
           </div>
-          
-          {restaurant.earlyBirdOffers && restaurant.earlyBirdOffers.length > 0 && (
-            <div className="mt-6 p-4 bg-white rounded-lg shadow-sm border-l-4 border-dineflex-burgundy">
-              <h3 className="text-xl font-semibold mb-2 text-dineflex-burgundy">
-                Early Bird Special
-              </h3>
-              {restaurant.earlyBirdOffers.map(offer => (
-                <div key={offer.id}>
-                  <p className="font-medium">{offer.title}</p>
-                  <p>{offer.description}</p>
-                  <p className="text-sm text-gray-600">Available: {offer.availableTimes}</p>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
